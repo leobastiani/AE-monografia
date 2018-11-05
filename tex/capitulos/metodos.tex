@@ -14,12 +14,12 @@ A linguagem de programação Java foi escolhida para a criação da ferramenta, 
 Nesse projeto há uma contextualização do problema nos seguintes moldes:
 
 \begin{itemize}
-    \item Indivíduo: um indivíduo é a representação de um jogador que possui uma pontuação provida da função fitness de acordo com as respostas produzidas por esse jogador.
+    \item Indivíduo: um indivíduo é a representação de um jogador que possui uma pontuação provida da função \fitness de acordo com as respostas produzidas por esse jogador.
     \item Gene: um gene é uma entidade capaz de provocar uma resposta. Para cada tipo de respostas há um grupo de genes.
-    \item Disputa: é uma função entre dois indivíduos que gera um vencedor e um perdedor com base na função fitness. Uma disputa deve necessariamente retornar o quão melhor um indivíduo foi em relação a outro.
+    \item Disputa: é uma função entre dois indivíduos que gera um vencedor e um perdedor com base na função \fitness. Uma disputa deve necessariamente retornar o quão melhor um indivíduo foi em relação a outro.
 \end{itemize}
 
-Por tanto, o indivíduo que possui os melhores genes terá uma função fitness melhor e ganhará mais disputas.
+Por tanto, o indivíduo que possui os melhores genes terá uma função \fitness melhor e ganhará mais disputas.
 
 A inspiração do paradigma da Computação Evolutiva vem da evolução natural formalizada por Darwin\footnote
 {Ridley , M. (1996). Evolution. Blackwell Science.}.
@@ -39,6 +39,6 @@ Um algoritmo evolutivo é usualmente composto por:
 
 \begin{itemize}
     \item Representação de genes dos indivíduos: Biologicamente, cada gene representa uma característica do indivíduo, e o cromossomo, que é o conjunto de genes de um indivíduo, representa uma o indivíduo. Computacionalmente, o cromossomo representa um candidato à solução do problema e o gene representa uma função para obtenção de uma resposta.
-    \item Função fitness (ou de adaptação): indica, para cada indivíduo, o valor de aptidão, mostrando a aproximação da solução proposta pelo indivíduo em relação à solução procurada.
-    \item Função de reprodução: Determina novos indivíduos que representarão a próxima geração da população do algoritmo herdando características positivas que são encontradas nos indivíduos com uma maior função fitness (ou mais aptos), propagando seus genes. O crossover e mutações ocorrem na função de reprodução, de modo análogo ao biológico.
+    \item Função \fitness (ou de adaptação): indica, para cada indivíduo, o valor de aptidão, mostrando a aproximação da solução proposta pelo indivíduo em relação à solução procurada.
+    \item Função de reprodução: Determina novos indivíduos que representarão a próxima geração da população do algoritmo herdando características positivas que são encontradas nos indivíduos com uma maior função \fitness (ou mais aptos), propagando seus genes. O crossover e mutações ocorrem na função de reprodução, de modo análogo ao biológico.
 \end{itemize}
