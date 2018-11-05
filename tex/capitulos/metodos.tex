@@ -37,8 +37,12 @@ que são adaptados de acordo com o contexto do problema a ser solucionado\footno
 {Mitchell, M. (1995) Genetic Algorithms and Artificial Life. In Artificial Life An Overview, Langton, C. G. (Ed.), Publisher: MIT Press, pp. 267-289.}.
 Um algoritmo evolutivo é usualmente composto por:
 
+\newcommand{\crossover}{\textit{crossover}\xspace}
+
 \begin{itemize}
     \item Representação de genes dos indivíduos: Biologicamente, cada gene representa uma característica do indivíduo, e o cromossomo, que é o conjunto de genes de um indivíduo, representa uma o indivíduo. Computacionalmente, o cromossomo representa um candidato à solução do problema e o gene representa uma função para obtenção de uma resposta.
     \item Função \fitness (ou de adaptação): indica, para cada indivíduo, o valor de aptidão, mostrando a aproximação da solução proposta pelo indivíduo em relação à solução procurada.
-    \item Função de reprodução: Determina novos indivíduos que representarão a próxima geração da população do algoritmo herdando características positivas que são encontradas nos indivíduos com uma maior função \fitness (ou mais aptos), propagando seus genes. O crossover e mutações ocorrem na função de reprodução, de modo análogo ao biológico.
+    \item Função de reprodução: Determina novos indivíduos que representarão a próxima geração da população do algoritmo herdando características positivas que são encontradas nos indivíduos com uma maior função \fitness (ou mais aptos), propagando seus genes. O \crossover e mutações ocorrem na função de reprodução, de modo análogo ao biológico.
 \end{itemize}
+
+Em um algoritmo evolutivo, a população inicial é constituída por indivíduos com genes aleatórios, ou seja, o início do algoritmo parte de uma solução aleatória e a cada geração, o valor de \fitness ou adequação é calculado em cada indivíduo. A função de reprodução gera novos indivíduos e as características positivas de cada indivíduo pode ser propagada para a nova geração, assim a solução caminha para uma resposta adequada. O fluxograma na Figura 1 representa estas etapas.
