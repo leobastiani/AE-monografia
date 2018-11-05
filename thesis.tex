@@ -1,0 +1,245 @@
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ICMC: Modelo de Trabalho Acadêmico (tese de doutorado, dissertação de
+% mestrado e trabalhos monográficos em geral) em conformidade com 
+% ABNT NBR 14724:2011: Informação e documentação - Trabalhos acadêmicos -
+% Apresentação
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+% Opções: 
+%   Qualificação         = qualificacao 
+%   Curso                = doutorado/mestrado
+%   Situação do trabalho = pre-defesa/pos-defesa (exceto para qualificação)
+% -- opções do pacote babel --
+% Idioma padrão = brazil
+	%french,	    	% idioma adicional para hifenização
+	%spanish,			% idioma adicional para hifenização
+	%english,			% idioma adicional para hifenização
+	%brazil				% o último idioma é o principal do documento
+\documentclass[brazil]{packages/icmc}
+
+% Tag <hr> como comando \hr
+\newcommand\hr{\par\vspace{-.5\ht\strutbox}\noindent\hrulefill\par}
+
+% Comando simples para exibir comandos Latex no texto
+\newcommand{\comando}[1]{\textbf{$\backslash$#1}}
+
+% ---
+% Pacotes Opcionais
+% ---
+\usepackage{rotating}           % Usado para rotacionar o texto
+\usepackage[all,knot,arc,import,poly]{xy}   % Pacote para desenhos gráficos
+% Este pacote pode conflitar com outros pacotes gráficos como o ``pictex''
+% Então é necessário usar apenas um dos pacotes conflitantes
+
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{Algoritmo evolutivo para treinar um sistema inteligente para jogos de disputa}
+\autor[Bastiani, L. G.]{Leonardo Guarnieri de Bastiani}
+\orientador[Orientador:]{Prof. Dr.}{Eduardo do Valle Simões}
+%\coorientador{Prof. Dr.}{Fulano de tal}
+\curso{Engenharia de Computação}
+\area{Computação Bioinspirada} % Área de concentração do trabalho
+\data{08}{11}{2018} % Data do depósito
+% ---
+
+
+% ---
+% RESUMOS
+% ---
+
+% Resumo em português
+% conter no máximo 500 palavras
+\textoresumo{
+    Este trabalho trata do desenvolvimento de um algoritmo bioinspirado capaz de treinar um sistema inteligente para aprender a emular comportamento em jogos de disputa. Nos jogos do contexto deste algoritmo, há decisões a serem tomadas por dois jogadores, dependendo da situação de cada jogada. Para isso, o algoritmo evolutivo ajusta os parâmetros que são usados na tomada de decisão. Para o algoritmo, a função fitness é a comparação dos resultados apresentados pelas soluções que forem sendo geradas para selecionar as mais adequadas para gerar novas alternativas de controladores.
+    }{Computação bioinspirada, algoritmo evolutivo, aprendizado de máquina, gamificação}
+
+% ---
+% resumo em inglês
+% ---
+\textoresumo[english]{
+    This project is about a development of a bioinspired algorithm capable of training an intelligent system to learn how to emulate behavior in dispute games. In the games in the context of this algorithm, there are decisions to be made by two players, depending on the situation of each move. The evolutionary algorithm adjusts the parameters that are used in the decision making. The fitness function is the comparison of the results presented by the solutions that are generated to select the most suitable ones to generate new alternatives of controllers.
+    }{Bio-inspired computation, evolutionary algorithm, machine learning, gamification}
+    
+% ---
+% Configurações de aparência do PDF final
+% ---
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2/ICMC-USP},
+		pdfkeywords={\palavraschave}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      	% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+
+% Inserir a ficha catalográfica
+%\incluifichacatalografica[tex/fichaCatalografica.pdf]
+\incluifichacatalografica
+
+
+% Inserir folha de aprovação
+%\input{tex/folha-aprovacao}
+
+% DEDICATÓRIA / AGRADECIMENTO / EPÍGRAFE
+\textodedicatoria*{tex/pre-textual/dedicatoria}
+\textoagradecimentos*{tex/pre-textual/agradecimentos}
+\textoepigrafe*{tex/pre-textual/epigrafe}
+
+% Inclui a lista de figuras
+\incluilistadefiguras
+
+% Inclui a lista de tabelas
+\incluilistadetabelas
+
+% Inclui a lista de quadros
+\incluilistadequadros
+
+% Inclui a lista de algoritmos
+\incluilistadealgoritmos
+
+% Inclui a lista de códigos
+\incluilistadecodigos
+
+% Inclui a lista de siglas e abreviaturas
+\incluilistadesiglas
+
+% Inclui a lista de símbolos
+\incluilistadesimbolos
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+\chapter{Introdução}
+\label{chapter:introducao}
+\input{tex/capitulos/introducao}
+
+\chapter{Métodos, Técnicas e Tecnologias Utilizadas}
+\label{chapter:metodos}
+\input{tex/capitulos/metodos}
+
+\chapter{Desenvolvimento}
+\label{chapter:desenvolvimento}
+\input{tex/capitulos/desenvolvimento}
+
+\chapter{Conclusão}
+\label{chapter:conclusao}
+\input{tex/capitulos/conclusao}
+
+\chapter{Instalando o abnTeX2}
+\label{chapter:instalando-abntex}
+\input{tex/instalando-abntex}
+
+\chapter{Orientações Gerais}
+\label{chapter:orientacoes-gerais}
+\input{tex/orientacoes-gerais}
+
+\chapter{Configuração dos Elementos Pré-Textuais}
+\label{chapter:config-pre-textual}
+\input{tex/config-pre-textual}
+
+\chapter{Corpos Flutuantes}
+\label{chapter:corpos-flutuantes}
+\input{tex/corpos-flutuantes}
+
+\chapter{Listas}
+\label{chapter:listas}
+\input{tex/listas}
+
+\chapter{Ferramentas Úteis}
+\label{chapter:ferramentas-uteis}
+\input{tex/ferramentas-uteis}
+
+\chapter{Citações e Referências}
+\label{chapter:citacoes}
+\input{tex/citacoes}
+
+
+% ---
+% Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
+% ---
+\bookmarksetup{startatroot}% 
+% ---
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{references}
+
+% ---------------------------------------------------------------------
+% GLOSSÁRIO
+% ---------------------------------------------------------------------
+
+% Arquivo que contém as definições que vão aparecer no glossário
+\input{tex/glossario}
+% Comando para incluir todas as definições do arquivo glossario.tex
+\glsaddall
+% Impressão do glossário
+\printglossaries
+
+% ----------------------------------------------------------
+% Apêndices
+% ----------------------------------------------------------
+
+% ---
+% Inicia os apêndices
+% ---
+\begin{apendicesenv}
+
+    \chapter{Documento Básico Usando a Classe icmc}
+    \label{chapter:documento-basico}
+    \input{tex/appendix/documento-basico}
+
+\end{apendicesenv}
+% ---
+
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+
+% ---
+% Inicia os anexos
+% ---
+\begin{anexosenv}
+
+    \chapter{Páginas Interessantes na Internet} 
+    \label{chapter:paginas-interessantes}
+    \input{tex/annex/paginas-interessantes}
+
+\end{anexosenv}
+% ---
+
+\end{document}

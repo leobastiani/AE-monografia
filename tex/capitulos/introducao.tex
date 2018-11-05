@@ -1,0 +1,23 @@
+\section{Motivação e Contextualização}
+
+\newcommand\SistemaEvolutivo{\sigla{SE}{Sistema Evolutivo}}
+
+Este trabalho relata a criação de uma biblioteca que aplica os conceitos de Computação Bioinspirada e sua aplicação em um sistema desconhecido com entradas e saídas bem definidas. Em contrastes aos algoritmos determinísticos existe a possibilidade de se aplicar um \SistemaEvolutivo\footnote{Layzell, P. (1999) Inherent Qualities of Circuits Designed by Artificial Evolution: A Preliminary Study of Populational Fault Tolerance. Proceedings of the First NASA/DoD Workshop on Evolvable Hardware - EH99, Jul. 19 - 21, 1999, Jet Propulsion Laboratory, California Institute of Technology, USA, Stoica, A., Keymeulen, D., and Lohn, J. (Eds.), Publisher: IEEE Computer Society Press, pp. 85-86.} para ajustar continuamente os parâmetros de controlador às variações na configuração do ambiente de trabalho.
+
+A área de pesquisa conhecida como Computação Bioinspirada procura encontrar soluções elegantes e eficientes que resolvem problemas grandes que, através de técnicas tradicionais, podem demandar tempo computacional incompatível com a necessidade de resposta. O comportamento social de formigas e abelhas, estratégia de caça de predadores ou o ciclo de atividade e hibernação de ursos são modelos e inspirações para essa área, estes exemplos ilustram soluções de problemas que podem incluir otimização, orientação e reconhecimento de padrões, tudo isso sendo obtido através de um processo evolutivo.\footnote{Simões, E. D. V. (2000). Indelevelmente Of An Embedded Evolutionary Controller To Enable Collision-Free Navigation Of A Population Of Autonomous Robots. University of Kent at Canterbury, Inglaterra p. 289}
+
+A técnica estudada neste trabalho denomina-se Computação Evolutiva da calsse de técnicas conhecida como Computação Biológica ou Biocomputação que se inspira em princípios biológicos para projetar o algoritmo computacional, mais especificamente no comportamento social de organismos.
+
+Um algoritmo evolutivo é capaz de caminhar a solução de um problema através da comparação de uma função fitness que é uma função de comparação entre duas soluções. Por tanto, nesse trabalho, a ferramenta desenvolvida tem sua função fitness como a comparação entre duas entidades que competem, o vencedor é aquele com uma melhor função fitness. Foi estudada uma aplicação desse algoritmo com a comparação entre um sistema qualquer com entradas e respostas de modo a prever as possíveis respostas do sistema.
+
+\section{Objetivos}
+
+Este trabalho visa desenvolver uma biblioteca de algoritmo evolutivo que se enquadra em situações onde pode-se comparar duas soluções por meio de disputas capaz de se adaptar às alterações de cada cenário e estudar sua aplicação em um sistema com entradas e saídas bem definidas de modo a prever novas saídas.
+
+A biblioteca implementa os conceitos de Indivíduo, que é um dos participantes de uma disputa, e de Gene, que é um dos fatores que determinará como um indivíduo responde a uma entrada. Nos estudos da utilização dessa ferramenta, foram feitos sistemas com saídas que seguem uma determinada lógica e os resultados foram comparados com um sistema que gera saídas aleatoriamente.
+
+\section{Organização}
+
+Este documento relata os métodos desenvolvidos e aplicados para a construção do algoritmo, além de citar fontes que comprovam a eficácia e estudos com aplicações do algoritmo que o validam.
+
+O código-fonte produzido para essa aplicação está disponibilizado\footnote{\url{https://github.com/leobastiani/AE}} e uso da biblioteca para novas ferramentas que podem ser modeladas nos casos dessa ferramenta, isto é, podem ser modeladas por meio de uma função fitness e são capazes de realizar disputas entre dois.
