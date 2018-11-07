@@ -14,14 +14,15 @@ Esta classe é responsável por englobar as funções referentes ao algoritmo ev
 
 As disputas realizadas pelos indivíduos seguem um sistema de disputa mata-mata, que por padrão possui 16 participantes, onde o primeiro e segundo colocados propagam suas característica genética com os indivíduos que não foram enfrentados por eles. A Figura \ref{figura:funcao_playAll} demonstra visualmente como funciona esse torneio e a propagação das características dos melhores colocados.
 
-% TODO: trocar figura e algoritmo pela função playAll
 \begin{figure}[htb]
-    \caption{Tornei realizado pela classe AE.}
+    \caption{Tornei realizado pela classe AE. A ilustração demonstra um caso em que o campeão do torneio veio dos indivíduos de 0 a 7 e o vice-campeão veio dos indivíduos de 8 a 15.}
     \label{figura:funcao_playAll}
     \centering
-    \includegraphics[scale=1]{images/dia/fluxograma-ae}
+    \includegraphics[scale=1]{images/ps/mata-mata}
     \fautor
 \end{figure}
+
+Neste torneio, vemos dois grupos, o grupo da esquerda composto pelos indivíduos de 0 a 7 e o grupo da direita composto pelos indivíduos de 8 a 15. O campeão do torneio transmite os genes para o grupo em que não obteve confrontos, com exceção do vice-campeão, e o mesmo ocorre para o vice-campeão.
 
 A classe AE possui outras funções implementadas que são de uso diverso e serão discutidas em outra subseção.
 
