@@ -91,16 +91,7 @@ Esse conjunto de funções extra torna o uso da biblioteca em outros projetos co
 
 A biblioteca produzida pode ser aplicada para quaisquer situações em que a gamificação baseada em disputas de dois jogadores pode ser aplicada. Por outro lado, essa biblioteca encara a função \fitness do algoritmo evolutivo de outra forma, o melhor algoritmo é aquele capaz de vencer mais jogos.
 
-Outro fator importante para o sucesso da biblioteca é o fator de que os indivíduos que não foram confrontados são aqueles que recebem os as característica do melhor. Assim, cria-se a lógica de que as estratégias tomadas por um dos indivíduos passará para o outro ramo de jogadores. A Figura \ref{figura:ae_torneio_passos} mostra como essa estratégia da biblioteca funciona.
-
-% TODO: trocar figura
-\begin{figure}[htb]
-    \caption{Demonstração de passos do torneio.}
-    \label{figura:ae_torneio_passos}
-    \centering
-    \includegraphics[scale=1]{images/dia/fluxograma-ae}
-    \fautor
-\end{figure}
+Outro fator importante para o sucesso da biblioteca é o fator de que os indivíduos que não foram confrontados são aqueles que recebem os as característica do melhor. Assim, cria-se a lógica de que as estratégias tomadas por um dos indivíduos passará para o outro ramo de jogadores. Por tanto, se houver duas boas estratégias de jogo, as duas se enfretarão em várias etapas e os melhroes indivíduos propagarão sua estratégia para outro ramo que enfrenta um dos melhores, mas com outra estratégia.
 
 A biblioteca facilita o desenvolvimento de programas que necessitam de um \SE por já estar implementada e testada. Qualquer usuário pode reutilizar a biblioteca, pois ela é de código aberto e está disponibilizada através da plataforma GitHub\footnote{Disponível em \url{https://github.com/}}. Além disso, a biblioteca implementa alguns conceitos no \SE que guiam o pensamento do desenvolvedor.
 
@@ -178,7 +169,7 @@ Outro conjunto 2 de estados obteve uma resposta com taxa de acerto de 79 de 100 
     \caption{Histórico de \fitness do conjunto 2 de estados.}
     \label{figura:resultado_79}
     \centering
-    \includegraphics[scale=1]{images/dia/fluxograma-ae}
+    \includegraphics[scale=1]{images/resultado_79}
     \fautor
 \end{figure}
 
