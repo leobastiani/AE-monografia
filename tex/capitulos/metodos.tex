@@ -1,4 +1,4 @@
-\section{Revisão Bibliográfica}
+\section{Revisão Bibliográfica} \label{secao:rev_bib}
 
 A linguagem de programação Java foi escolhida para a criação da ferramenta, os motivos para essa escolha foram:
 
@@ -45,12 +45,13 @@ Um algoritmo evolutivo é usualmente composto por:
     \item Função de reprodução: Determina novos indivíduos que representarão a próxima geração da população do algoritmo herdando características positivas que são encontradas nos indivíduos com uma maior função \fitness (ou mais aptos), propagando seus genes. O \crossover e mutações ocorrem na função de reprodução, de modo análogo ao biológico.
 \end{itemize}
 
-Em um algoritmo evolutivo, a população inicial é constituída por indivíduos com genes aleatórios, ou seja, o início do algoritmo parte de uma solução aleatória e a cada geração, o valor de \fitness ou adequação é calculado em cada indivíduo. A função de reprodução gera novos indivíduos e as características positivas de cada indivíduo pode ser propagada para a nova geração, assim a solução caminha para uma resposta adequada. O fluxograma na Figura 1 representa estas etapas.
+Em um algoritmo evolutivo, a população inicial é constituída por indivíduos com genes aleatórios, ou seja, o início do algoritmo parte de uma solução aleatória e a cada geração, o valor de \fitness ou adequação é calculado em cada indivíduo. A função de reprodução gera novos indivíduos e as características positivas de cada indivíduo pode ser propagada para a nova geração, assim a solução caminha para uma resposta adequada. O fluxograma na Figura \ref{figura:fluxograma_ae} representa estas etapas.
 
 \begin{figure}[htb]
     \caption{Fluxograma de uma implementação típica de um algoritmo evolutivo.}
     \label{figura:fluxograma_ae}
     \centering
+    %scale=0.8
     \includegraphics[scale=1]{images/dia/fluxograma-ae}
     \fautor
 \end{figure}
