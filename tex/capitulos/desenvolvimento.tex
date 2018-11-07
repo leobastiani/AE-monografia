@@ -50,7 +50,7 @@ Cada indivíduo pode possuir uma determinada quantidade de genes que são capaze
     \item \method{Consumir}: O método de \method{consumir} altera a variável \var{estado} do gene conforme a equação \ref{eq:gene_consumir} onde $x$ é o valor da entrada, $i$ é a posição da entrada no ventor de entradas de um sistema, ou seja, se um sistema possui entradas com vetor de tamanho $N$, $i$ terá valores de 0 até $N-1$, $E$ e $I$ são funções descritas em \ref{eq:eq}.
     \begin{equation}
         \label{eq:gene_consumir}
-        \mathrm{Estado} \xleftarrow[]{} f(x, i) = E(x) * I_i(i)
+        \mathrm{Estado} \leftarrow \mathrm{Estado} +  E(x) * I_i(i)
     \end{equation}
     \item \method{Reset}: O método de \method{reset} devolve o \var{estado} do gene para um estado inicial. A classe Gene possui as variáveis internas \var{estado}, \var{estadoInicial}, \var{limiteSup} e \var{limiteInf}. A função de \method{reset} está descrita no algoritmo \ref{algoritmo:gene_reset}.
 \end{itemize}
