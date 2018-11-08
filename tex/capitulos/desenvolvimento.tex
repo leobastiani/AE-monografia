@@ -174,10 +174,10 @@ Outro conjunto 2 de estados obteve uma resposta com taxa de acerto de 79 de 100 
 Outros 10 conjuntos de estados foram analisados, a Figura \ref{figura:dez_execucoes} há resultados de execuções do algoritmo após 100.000 gerações, comparando o melhor indivíduo obtido pelo algoritmo com o melhor indivíduo obtido aleatoriamente, a figura mostra que o algoritmo obteve uma pontuação melhor do que tentativas aleatórias de acerto em todos os casos, evidenciando que o algoritmo caminha de alguma forma para uma solução.
 
 \begin{figure}[htb]
-    \caption{Histórico de \fitness do conjunto 2 de estados.}
-    \label{figura:resultado_79}
+    \caption{Resultado de dez execuções do algoritmo com 100.000 gerações comparando o melhor indivíduo obtido pela lógica da biblioteca com outro obtido aleatoriamente}
+    \label{figura:dez_execucoes}
     \centering
-    \includegraphics[scale=0.8]{images/resultado_79}
+    \includegraphics[scale=0.8]{images/dez_execucoes}
     \fautor
 \end{figure}
 
@@ -192,3 +192,5 @@ A biblioteca está implementada nos moldes citados e testada, entretanto, limita
 Os testes aplicados a esse estudos obtiveram resultados melhores do que vetores aleatórios, mas se demonstraram dependentes dos valores fornecidos. Em situações com uma amostragem de dados muito grande, é possível selecionar os melhores dados para alimentar o algoritmo evolutivo a fim de se encontrar os melhores parâmetros para previsão.
 
 Os testes realizados foram com poucas entradas e com poucas saídas definidas, devido ao tempo computacional requerido para muitas entradas ou muitas saídas. Esse tema será discutido na seção de trabalhos futuros.
+
+Embora os Algoritmos Evolutivos tenham sido exaustivamente explorados no meio acadêmico, os mesmos encontram resistência para serem aceitos no desenvolvimento de certas aplicações como jogos, devido ao fato de pesquisadores apontarem a técnica como lenta e capaz de permitir a obtenção de desempenhos ruins \cite{Sweetser2002} \cite{Spronck2003} \cite{Marcio2008}. Neste trabalho, os resultados não foram surpreendentes, pois são dependentes das entradas e análises com muitas entradas provocam lentidão. No entanto, é reconhecido que Algoritmos Evolutivos possuem o potencial para atuar em áreas nas quais técnicas tradicionais utilizadas em IA de jogos apresentam deficiências \cite{YANNAKAKIS2005}.
