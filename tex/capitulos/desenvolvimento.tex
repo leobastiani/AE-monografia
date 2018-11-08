@@ -1,6 +1,6 @@
 \section{O Problema}
 
-O consiste do desenvolvimento de uma biblioteca de algoritmo evolutivo genérica para solucionar problemas com gamificação de disputas, ou seja, soluções que possam ser comparadas através de uma disputa entre dois jogadores, gerando um vencedor e um perdedor necessariamente. Bem como estudar as aplicações desse algoritmo em um sistema com entradas e saídas bem definidas, de modo que a solução não esteja implícita em nenhuma das entradas e saídas, mas que o algoritmo possa evoluir livremente para encontrar o melhor rearranjo dos genes até produzir respostas idênticas as oferecidas pelo sistema.
+O projeto consiste do desenvolvimento de uma biblioteca de algoritmo evolutivo genérica para solucionar problemas com gamificação de disputas, ou seja, encontrar soluções que possam ser comparadas através de uma disputa entre dois jogadores, gerando um vencedor e um perdedor necessariamente. Bem como estudar as aplicações desse algoritmo em um sistema com entradas e saídas bem definidas, de modo que a solução não esteja implícita em nenhuma das entradas e saídas, mas que o algoritmo possa evoluir livremente para encontrar o melhor rearranjo dos genes até produzir respostas idênticas as oferecidas pelo sistema.
 
 \section{Biblioteca de Algoritmos Evolutivos}
 
@@ -10,7 +10,7 @@ Foi feita uma biblioteca para uso de algoritmos evolutivos em Java que emprega o
 
 Esta classe é responsável por englobar as funções referentes ao algoritmo evolutivo em si, ou seja, ela organiza e remaneja os indivíduos, realiza confrontos, compara soluções, seleciona os melhores e recombina os indivíduos de modo que as melhores soluções propaguem suas características.
 
-As disputas realizadas pelos indivíduos seguem um sistema de torneio mata-mata\footnote{\url{https://pt.wikipedia.org/wiki/Competições_eliminatórias}}, que por padrão possui 16 participantes, no qual o primeiro e segundo colocados propagam suas características genéticas com os indivíduos que não foram enfrentados por eles.
+As disputas realizadas pelos indivíduos seguem um sistema de torneio mata-mata\footnote{\url{https://pt.wikipedia.org/wiki/Competições_eliminatórias}}, que por padrão possui 16 participantes, no qual o primeiro e segundo colocados cruzam suas características genéticas com os indivíduos que não foram enfrentados por eles.
 
 \begin{figure}[htb]
     \caption{Torneio realizado pela classe AE. A ilustração demonstra um caso em que o campeão do torneio veio dos indivíduos de 0 a 7 e o vice-campeão veio dos indivíduos de 8 a 15.}
@@ -20,7 +20,7 @@ As disputas realizadas pelos indivíduos seguem um sistema de torneio mata-mata\
     \fautor
 \end{figure}
 
-Neste torneio, vemos dois grupos, o grupo da esquerda composto pelos indivíduos de 0 a 7 e o grupo da direita composto pelos indivíduos de 8 a 15. O campeão do torneio transmite os genes para o grupo em que não obteve confrontos, com exceção do vice-campeão, e o mesmo ocorre para o vice-campeão.
+Neste torneio, há dois grupos, o grupo da esquerda composto pelos indivíduos de 0 a 7 e o grupo da direita composto pelos indivíduos de 8 a 15. O campeão do torneio transmite os genes para o grupo em que não obteve confrontos, com exceção do vice-campeão, e o mesmo ocorre para o vice-campeão.
 
 A Figura \ref{figura:funcao_playAll} demonstra como funciona esse torneio e a propagação das características dos melhores colocados, exemplificando que o indivíduo campeão estava entre os indivíduos de 0 a 7 e o vice-campeão estava entre os indivíduos de 8 a 15, sendo assim, o campeão transmite suas características genéticas para os indivíduos de 8 a 15, com exceção do vice-campeão, e vice-versa.
 
@@ -30,7 +30,7 @@ A classe AE possui outras funções implementadas que são de uso diverso e ser�
 
 \newcommand{\var}[1]{\textit{#1}}
 
-A classe Eq representa uma equação e possui uma função como representa a equação \ref{eq:eq}. Onde as variáveis \var{factor} e \var{sum} correspondem a variáveis internas da classe.
+A classe Eq representa uma equação e possui uma função como representa a equação \ref{eq:eq}. Onde as variáveis \var{factor} e \var{sum} correspondem a variáveis internas da classe e constituem parte de um gene.
 
 \begin{equation}
     \label{eq:eq}
@@ -65,7 +65,7 @@ Cada indivíduo pode possuir uma determinada quantidade de genes que são capaze
     }
 \end{algoritmo}
 
-\subsection{Outras implementações}
+\subsection{Outras implementações} \label{secao:vetor_estados}
 
 A biblioteca implementa outras funções que são necessárias para a execução do \SE e facilitam o trabalho de desenvolvedores que a utilizam, elas são:
 
@@ -81,7 +81,7 @@ A biblioteca implementa outras funções que são necessárias para a execução
             \item Adquirir o valor da melhor solução;
             \item Definir o novo valor como a média entre a melhor solução e o valor atual.
         \end{itemize}
-    \item Uma classe de estados: como esse projeto tem uma área dedicada ao estudo de previsão de estados, a classe de estados implementada para essa solução foi mantida no projeto de biblioteca para um \SE.
+    \item Uma classe de estados: como esse projeto tem uma área dedicada ao estudo de previsão de estados, que é um sistema com entradas e saídas bem definidas, a classe de estados implementada para essa solução foi mantida no projeto de biblioteca para um \SE.
     \item Descarte dos piores genes: a fim de aumentar a variabilidade genética, há um parâmetro que configura o número de gerações para que ocorra um descarte dos piores indivíduos por novos.
 \end{itemize}
 
@@ -89,11 +89,11 @@ Esse conjunto de funções extra traduz que uso da biblioteca em outros projetos
 
 \subsection{Resultados}
 
-A biblioteca produzida pode ser aplicada para quaisquer situações em que a gamificação baseada em disputas de dois jogadores pode ser aplicada. Por outro lado, essa biblioteca encara a função \fitness do algoritmo evolutivo de outra forma, o melhor algoritmo é aquele capaz de vencer mais jogos.
+A biblioteca produzida pode ser aplicada para quaisquer situações em que pode-se abstrair uma solução baseada em disputas de dois jogadores. Por outro lado, essa biblioteca encara a função \fitness do algoritmo evolutivo de outra forma, o melhor algoritmo é aquele capaz de vencer mais jogos.
 
 Outro fator importante para o sucesso da biblioteca é o fator de que os indivíduos que não foram confrontados são aqueles que recebem as característica do melhor. Assim, cria-se a lógica de que as estratégias tomadas por um dos indivíduos passará para o outro ramo de jogadores. Por tanto, se houver duas boas estratégias de jogo, as duas se enfrentarão em várias etapas e os melhores indivíduos propagarão sua estratégia para outro ramo que enfrenta um dos melhores, mas com outra estratégia.
 
-A biblioteca facilita o desenvolvimento de programas que necessitam de um \SE por já estar implementada e testada. Qualquer usuário pode reutilizar a biblioteca, pois ela é de código aberto e está disponibilizada através da plataforma GitHub\footnote{Disponível em \url{https://github.com/}}. Além disso, a biblioteca implementa alguns conceitos no \SE que guiam o pensamento do desenvolvedor.
+A biblioteca facilita o desenvolvimento de programas que necessitam de um \SE por já estar implementada e testada. Qualquer usuário pode reutilizar a biblioteca, pois ela é de código aberto e está disponibilizada através da plataforma GitHub\footnote{Disponível em \url{https://github.com/leobastiani/AE}}. Além disso, a biblioteca implementa alguns conceitos no \SE que guiam o pensamento do desenvolvedor.
 
 \section{Algoritmo evolutivo para previsão de estados}
 
@@ -171,11 +171,13 @@ Outro conjunto 2 de estados obteve uma resposta com taxa de acerto de 79 de 100 
     \fautor
 \end{figure}
 
+TODO: figura nova
+
 \section{Dificuldades e Limitações}
 
 \subsection{Sobre a biblioteca desenvolvida}
 
-A biblioteca está bem implementada e testada, entretanto, limita o usuário a linguagem Java. Idealmente a biblioteca deveria ser escrita em C/C++, compilada como executável de biblioteca dinâmica e adaptada para as mais diversas linguagens do mercado, essas mudanças ajudariam no desempenho e no reuso da biblioteca para outras linguagens. O projeto não foi desenvolvido dessa maneira pelas vantagens citadas na seção \ref{secao:rev_bib}, por se tratar de um material de estudo, os benefícios de Java foram importantes para o projetista.
+A biblioteca está implementada nos moldes citados e testada, entretanto, limita o usuário a linguagem Java. Idealmente a biblioteca deveria ser escrita em C/C++, compilada como executável de biblioteca dinâmica e adaptada para as mais diversas linguagens do mercado, essas mudanças ajudariam no desempenho e no reuso da biblioteca para outras linguagens. O projeto não foi desenvolvido dessa maneira pelas vantagens citadas na seção \ref{secao:rev_bib}, por se tratar de um material de estudo, os benefícios de Java foram importantes para o projetista.
 
 \subsection{Sobre o algoritmo evolutivo para previsão de estados}
 
