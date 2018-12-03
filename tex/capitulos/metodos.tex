@@ -2,14 +2,14 @@
 
 A inspiração do paradigma da Computação Evolutiva vem da evolução natural formalizada por Darwin \cite{Ridley1996}. Algoritmos embebidos desta tese possuem passos genéricos capazes de resolver um grande número de problemas práticos, e possuem características como auto-organização e comportamento adaptativo \cite{Goldberg1988}, portanto são capazes de tratar problemas computacionalmente complexos com uma ferramenta de propósito geral. Por outro lado, esses algoritmos não garantem a obtenção de uma solução ótima \cite{Zuben2000} por poder convergir para soluções localmente ótimas.
 
-A biblioteca desenvolvida pode ter inúmeras aplicações como na indústria de jogos. Em 2002, Sweetser disse que o próximo foco no mercado de jogos seria a elaboração de personagens que se comportam de forma realista e podem aprender e se adaptar, ao invés de personagens com maiores resoluções e com mais \textit{frames} por segundo \ref{Sweetser2002}. Por isso, foi feito um estudo com essa biblioteca em que dado um vetor de estados, isto é, estados com um vetor de entradas numéricas e uma saída bem definida, o algoritmo fosse capaz de prever as saídas, criando uma situação de imitação que pode ser aplicada em jogos para torná-los mais realistas.
+A biblioteca desenvolvida pode ter inúmeras aplicações como na indústria de jogos. \citeonline{Sweetser2002} disse que o próximo foco no mercado de jogos seria a elaboração de personagens que se comportam de forma realista e podem aprender e se adaptar, ao invés de personagens com maiores resoluções e com mais \textit{frames} por segundo. Por isso, foi feito um estudo com a biblioteca desenvolvida em que dado um vetor de estados, isto é, estados com um vetor de entradas numéricas e uma saída bem definida, o algoritmo fosse capaz de prever as saídas, criando uma situação de imitação que pode ser aplicada em jogos para torná-los mais realistas.
 
-A linguagem de programação Java foi escolhida para a criação da ferramenta, os motivos para essa escolha foram:
+A linguagem de programação Java foi escolhida para a criação da ferramenta. Os motivos para essa escolha foram:
 
-\newcommand{\JVM}{\sigla{JVM}{Java Virtual Machine}\xspace}
+\newcommand{\JVM}{JVM\xspace}
 
 \begin{itemize}
-    \item Multiplataforma: Java é uma linguagem capaz de ser executada em qualquer sistema que possua uma \JVM, sua execução e desenvolvimento independe do sistema, permitindo que a aplicação desenvolvida não sofra essa restrição.
+    \item Multiplataforma: Java é uma linguagem capaz de ser executada em qualquer sistema que possua uma \textit{Java Virtual Machine} (JVM), sua execução e desenvolvimento independe do sistema, permitindo que a aplicação desenvolvida não sofra essa restrição.
     \item Desempenho: entre as linguagens de programação que são interpretadas, Java possui um desempenho melhor por ser compilada e interpretada, gerando um código intermediário que é executado pela \JVM.
     \item Facilidade e didática: Java é uma linguagem que permite certas comodidades ao programador com um bom balanço de desempenho, como a ferramenta desenvolvida foi utilizada para estudos e é de uso genérico, as facilidades fornecidas pela linguagem são importante para agilizar e pela validação do trabalho.
     \item Modelagem: a modelagem de classes fornecida por Java ajudam no entendimento e no reuso da biblioteca desenvolvida.
@@ -23,7 +23,7 @@ Nesse projeto há uma contextualização do problema nos seguintes moldes:
     \item Disputa: é uma função entre dois indivíduos que gera um vencedor e um perdedor com base na função \fitness. Uma disputa deve necessariamente retornar o quão melhor um indivíduo foi em relação a outro.
 \end{itemize}
 
-Por tanto, o indivíduo que possui os melhores genes terá uma função \fitness melhor e ganhará mais disputas.
+Portanto, o indivíduo que possui os melhores genes terá uma função \fitness melhor e ganhará mais disputas.
 
 \section{Algoritmos evolutivos}
 Os algoritmos evolutivos podem ser resumidos em um roteiro básico de procedimentos \cite{Todd1997} que são adaptados de acordo com o contexto do problema a ser solucionado \cite{Werger1999} \cite{Mitchell1995}. Um algoritmo evolutivo é usualmente composto por:

@@ -1,6 +1,6 @@
 \section{O Problema}
 
-O projeto consiste do desenvolvimento de uma biblioteca de algoritmo evolutivo genérica para solucionar problemas com gamificação de disputas, ou seja, encontrar soluções que possam ser comparadas através de uma disputa entre dois jogadores, gerando um vencedor e um perdedor necessariamente. Bem como estudar as aplicações desse algoritmo em um sistema com entradas e saídas bem definidas, de modo que a solução não esteja implícita em nenhuma das entradas e saídas, mas que o algoritmo possa evoluir livremente para encontrar o melhor rearranjo dos genes até produzir respostas idênticas as oferecidas pelo sistema.
+O projeto consiste do desenvolvimento de uma biblioteca de algoritmo evolutivo genérica para solucionar problemas com gamificação de disputas, ou seja, encontrar soluções que possam ser comparadas através de uma disputa entre dois jogadores, gerando um vencedor e um perdedor necessariamente. Bem como estudar as aplicações desse algoritmo em um sistema com entradas numéricas e saídas bem definidas, como por exemplo números inteiros de um a três, de modo que a solução não esteja implícita em nenhuma das entradas e saídas, mas que o algoritmo possa evoluir livremente para encontrar o melhor rearranjo dos genes até produzir respostas idênticas as oferecidas pelo sistema.
 
 \section{Biblioteca de Algoritmos Evolutivos}
 
@@ -10,7 +10,7 @@ Foi feita uma biblioteca para uso de algoritmos evolutivos em Java que emprega o
 
 Esta classe é responsável por englobar as funções referentes ao algoritmo evolutivo em si, ou seja, ela organiza e remaneja os indivíduos, realiza confrontos, compara soluções, seleciona os melhores e recombina os indivíduos de modo que as melhores soluções propaguem suas características.
 
-As disputas realizadas pelos indivíduos seguem um sistema de torneio mata-mata\footnote{\url{https://pt.wikipedia.org/wiki/Competições_eliminatórias}}, que por padrão possui 16 participantes, no qual o primeiro e segundo colocados cruzam suas características genéticas com os indivíduos que não foram enfrentados por eles.
+As disputas realizadas pelos indivíduos seguem um sistema de torneio mata-mata\footnote{\url{https://pt.wikipedia.org/wiki/Competi\%C3\%A7\%C3\%B5es_eliminat\%C3\%B3rias}}, que por padrão possui 16 participantes, no qual o primeiro e segundo colocados cruzam suas características genéticas com os indivíduos que não foram enfrentados por eles.
 
 \begin{figure}[htb]
     \caption{Torneio realizado pela classe AE. A ilustração demonstra um caso em que o campeão do torneio veio dos indivíduos de 0 a 7 e o vice-campeão veio dos indivíduos de 8 a 15.}
@@ -20,7 +20,7 @@ As disputas realizadas pelos indivíduos seguem um sistema de torneio mata-mata\
     \fautor
 \end{figure}
 
-Neste torneio, há dois grupos, o grupo da esquerda composto pelos indivíduos de 0 a 7 e o grupo da direita composto pelos indivíduos de 8 a 15. O campeão do torneio transmite os genes para o grupo em que não obteve confrontos, com exceção do vice-campeão, e o mesmo ocorre para o vice-campeão.
+Neste torneio, há dois grupos, o grupo da esquerda composto pelos indivíduos de 0 a 7 e o grupo da direita composto pelos indivíduos de 8 a 15. O campeão do torneio transmite os genes, ou seja, as suas características, para o grupo em que não obteve confrontos, com exceção do vice-campeão, e o mesmo ocorre para o vice-campeão.
 
 A Figura \ref{figura:funcao_playAll} demonstra como funciona esse torneio e a propagação das características dos melhores colocados, exemplificando que o indivíduo campeão estava entre os indivíduos de 0 a 7 e o vice-campeão estava entre os indivíduos de 8 a 15, sendo assim, o campeão transmite suas características genéticas para os indivíduos de 8 a 15, com exceção do vice-campeão, e vice-versa.
 
@@ -30,7 +30,7 @@ A classe AE possui outras funções implementadas que são de uso diverso e ser�
 
 \newcommand{\var}[1]{\textit{#1}}
 
-A classe Eq representa uma equação e possui uma função como representa a equação \ref{eq:eq}. Onde as variáveis \var{factor} e \var{sum} correspondem a variáveis internas da classe e constituem parte de um gene.
+A classe Eq representa uma equação e possui uma função como representa a equação \ref{eq:eq}. Onde as variáveis \var{factor} e \var{sum} correspondem a variáveis internas da classe, ou seja, são valores que acompanham a entidade de Eq e sofrem o processo de evolução da biblioteca, e constituem parte de um gene.
 
 \begin{equation}
     \label{eq:eq}
@@ -48,12 +48,12 @@ Na biblioteca, o indivíduo possui o método \method{play} que recebe outro indi
 Cada indivíduo pode possuir uma determinada quantidade de genes que são capazes de gerar uma resposta. O gene pode ser excitado de alguma forma pelo sistema e possui um valor de estado que pode aumentar de acordo com a operação operação de consumir um estado. Portanto um gene possui duas funções que envolvem a variável \var{estado}:
 
 \begin{itemize}
-    \item \method{Consumir}: O método de \method{consumir} altera a variável \var{estado} do gene conforme a equação \ref{eq:gene_consumir} onde $x$ é o valor da entrada, $i$ é a posição da entrada no ventor de entradas de um sistema, ou seja, se um sistema possui entradas com vetor de tamanho $N$, $i$ terá valores de 0 até $N-1$, $E$ e $I$ são funções descritas em \ref{eq:eq}.
+    \item \method{Consumir}: O método de \method{consumir} altera a variável \var{estado} do gene conforme a equação \ref{eq:gene_consumir} onde $x$ é o valor da entrada, $i$ é a posição da entrada no vetor de entradas de um sistema, ou seja, se um sistema possui entradas com vetor de tamanho $N$, $i$ terá valores de 0 até $N-1$, $E$ e $I$ são funções descritas pela equação \ref{eq:eq} com parâmetros inicialmente gerados aleatoriamente.
     \begin{equation}
         \label{eq:gene_consumir}
         \mathrm{Estado} \leftarrow \mathrm{Estado} +  E(x) * I_i(i)
     \end{equation}
-    \item \method{Reset}: O método de \method{reset} devolve o \var{estado} do gene para um estado inicial. A classe Gene possui as variáveis internas \var{estado}, \var{estadoInicial}, \var{limiteSup} e \var{limiteInf}. A função de \method{reset} está descrita no algoritmo \ref{algoritmo:gene_reset}.
+    \item \method{Reset}: O método de \method{reset} devolve o \var{estado} do gene para um estado inicial. A classe Gene possui as variáveis internas \var{estado}, \var{estadoInicial}, \var{limiteSup} e \var{limiteInf}. A função de \method{reset} está descrita no algoritmo \ref{algoritmo:gene_reset} que é executada a cada nova entrada.
 \end{itemize}
 
 \begin{algoritmo}
@@ -73,7 +73,7 @@ A biblioteca implementa outras funções que são necessárias para a execução
     \item Funções para gerar números aleatórios:
         \begin{itemize}
             \item Funções para gerar números aleatórios inteiros ou com ponto decimal;
-            \item Função para gerar números aleatórios com média deslocada para as bordas, pois a solução pode ter uma combinação de valores bem distinta.
+            \item Função para gerar números aleatórios com variação nos limites das bordas, pois a solução pode ter uma combinação de valores bem distinta. A função de números aleatórios está descrita pelo algoritmo \ref{algoritmo:surprise}.
         \end{itemize}
     \item Cruzamento de números: esta função realiza um sorteio com as possibilidades de:
         \begin{itemize}
@@ -85,11 +85,25 @@ A biblioteca implementa outras funções que são necessárias para a execução
     \item Descarte dos piores genes: a fim de aumentar a variabilidade genética, há um parâmetro que configura o número de gerações para que ocorra um descarte dos piores indivíduos por novos.
 \end{itemize}
 
-Esse conjunto de funções extra traduz que uso da biblioteca em outros projetos gera um aumento de produtividade e diminuição do tempo necessário para a conclusão.
+\begin{algoritmo}
+\caption{Função para gerar um número aleatório.}
+\label{algoritmo:surprise}
+    \tcp{randint(A, B) retorna um número aleatório inteiro entre A e B inclusive.}
+    \tcp{randdouble(A, B) retorna um número aleatório real entre A e B inclusive.}
+    \If(\tcp*[f]{30\% de chance do número ser aleatoriamente entre -100 e 100})
+    {randint(1, 10) <= 3} {
+        \tcp{Um número aleatório de escala maior}
+        \Return randdouble(-100, 100)
+    }
+    \tcp{Um número aleatório com escala reduzida}
+    \Return randdouble(-2, 2)
+\end{algoritmo}
 
-\subsection{Resultados}
+Esse conjunto de funções extras traduz que uso da biblioteca em outros projetos gera um aumento de produtividade e diminuição do tempo necessário para a conclusão.
 
-A biblioteca produzida pode ser aplicada para quaisquer situações em que pode-se abstrair uma solução baseada em disputas de dois jogadores. Por outro lado, essa biblioteca encara a função \fitness do algoritmo evolutivo de outra forma, o melhor algoritmo é aquele capaz de vencer mais jogos.
+\subsection{Resultados da biblioteca desenvolvida}
+
+A biblioteca produzida pode ser aplicada para quaisquer situações em que pode-se abstrair uma solução baseada em disputas de dois jogadores. Por outro lado, essa biblioteca encara a função \fitness do algoritmo evolutivo de outra forma, o melhor indivíduo é aquele capaz de vencer mais jogos.
 
 Outro fator importante para o sucesso da biblioteca é o fator de que os indivíduos que não foram confrontados são aqueles que recebem as característica do melhor. Assim, cria-se a lógica de que as estratégias tomadas por um dos indivíduos passará para o outro ramo de jogadores. Por tanto, se houver duas boas estratégias de jogo, as duas se enfrentarão em várias etapas e os melhores indivíduos propagarão sua estratégia para outro ramo que enfrenta um dos melhores, mas com outra estratégia.
 
@@ -105,9 +119,9 @@ Para esse projeto, foi feito um estudos com saídas de tamanho $N=3$, um número
 
 A biblioteca produzida foi estendida e utilizada, as alterações feitas para o uso da biblioteca estão detalhadas a seguir.
 
-\subsection{Classe Indivíduo}
+\subsection{Classe Indivíduo estendida da biblioteca}
 
-Um indivíduo recebe as entradas do sistema e a cada iteração, produz uma saída de acordo com os valores de estado de seus genes. Um bom individuo é aquele capaz de prever as saídas dos estados dependendo das entradas. O melhor indivíduo é aquele que prevê todas saídas.
+A Classe de indivíduo para a aplicação estudada foi estendida da biblioteca e possui implementações particulares para se enquadrar no caso estudado. Um indivíduo recebe as entradas do sistema e a cada iteração, produz uma saída de acordo com os valores de estado de seus genes. Um bom individuo é aquele capaz de prever as saídas dos estados dependendo das entradas. O melhor indivíduo é aquele que prevê todas saídas.
 
 Os confrontos entre indivíduos se dão do seguinte critério:
 \begin{itemize}
@@ -129,7 +143,7 @@ Mas essa classe segue as mesmas regras da classe Gene, ou seja, o Gene mais exci
 
 \subsection{Estados do sistema analisados}
 
-Entre os possíveis estados para se analisar, a melhor escolha foi um sistema de vetor de entradas $E$ de tamanho 3 e vetor de saídas $S$ de tamanho 1 descrito por:
+O sistema escolhido foi um sistema de vetor de entradas $E$ de tamanho 3 e vetor de saídas $S$ de tamanho 1 descrito por:
 
 \begin{gather*}
     2 \quad \mathrm{se} \quad E_2 > E_0 \quad \mathbf{e} \quad E_2 > E_1 \\
@@ -145,7 +159,7 @@ Esse sistema é um bom caso de estudo pois:
     \item Possui muitas comparações: o sistema faz várias comparações e o algoritmo evolutivo deve imitar ou simular as comparações para obter as respostas.
 \end{itemize}
 
-Os valores de entrada foram obtidos aleatoriamente e foram feitos teste com 200 e 100 estados, mas o há uma condição, o número de saídas de um valor de resposta deve ser de no mínimo um quinto do número de estados, isso foi determinado para que houvesse uma quantidade razoável de todas as respostas possíveis. Testes com 200 estados produziram resultados semelhantes aos testes com 100 estados, porém o algoritmo necessita de mais tempo para convergir, por isso, o daremos foco com testes de 100 estados.
+Os valores de entrada foram obtidos aleatoriamente e foram feitos teste com 200 e 100 estados, mas há uma condição, o número de saídas de um valor de resposta deve ser de no mínimo um quinto do número de estados, isso foi determinado para que houvesse uma quantidade razoável de todas as respostas possíveis. Testes com 200 estados produziram resultados semelhantes aos testes com 100 estados, porém o algoritmo necessita de mais tempo para convergir, por isso, o daremos foco com testes de 100 estados.
 
 \subsection{Resultados}
 
@@ -189,8 +203,8 @@ A biblioteca está implementada nos moldes citados e testada, entretanto, limita
 
 \subsection{Sobre o algoritmo evolutivo para previsão de estados}
 
-Os testes aplicados a esse estudos obtiveram resultados melhores do que vetores aleatórios, mas se demonstraram dependentes dos valores fornecidos. Em situações com uma amostragem de dados muito grande, é possível selecionar os melhores dados para alimentar o algoritmo evolutivo a fim de se encontrar os melhores parâmetros para previsão.
+Os testes aplicados a esse estudos obtiveram resultados melhores do que vetores aleatórios, mas se demonstraram dependentes dos valores fornecidos, pois o mesmo sistema com entradas diferentes produziram resultados variados. Em situações com uma amostragem de dados muito grande, é possível selecionar os melhores dados para alimentar o algoritmo evolutivo a fim de se encontrar os melhores parâmetros para previsão.
 
 Os testes realizados foram com poucas entradas e com poucas saídas definidas, devido ao tempo computacional requerido para muitas entradas ou muitas saídas. Esse tema será discutido na seção de trabalhos futuros.
 
-Embora os Algoritmos Evolutivos tenham sido exaustivamente explorados no meio acadêmico, os mesmos encontram resistência para serem aceitos no desenvolvimento de certas aplicações como jogos, devido ao fato de pesquisadores apontarem a técnica como lenta e capaz de permitir a obtenção de desempenhos ruins \cite{Sweetser2002} \cite{Spronck2003} \cite{Marcio2008}. Neste trabalho, os resultados não foram surpreendentes, pois são dependentes das entradas e análises com muitas entradas provocam lentidão. No entanto, é reconhecido que Algoritmos Evolutivos possuem o potencial para atuar em áreas nas quais técnicas tradicionais utilizadas em IA de jogos apresentam deficiências \cite{YANNAKAKIS2005}.
+Embora os Algoritmos Evolutivos tenham sido exaustivamente explorados no meio acadêmico, os mesmos encontram resistência para serem aceitos no desenvolvimento de certas aplicações como jogos, devido ao fato de pesquisadores apontarem a técnica como lenta e capaz de permitir a obtenção de desempenhos ruins \cite{Sweetser2002} \cite{Spronck2003} \cite{Marcio2008}. Neste trabalho, os resultados não foram surpreendentes, pois são dependentes das entradas e análises com muitas entradas provocam lentidão. No entanto, é reconhecido que Algoritmos Evolutivos possuem o potencial para atuar em áreas nas quais técnicas tradicionais utilizadas apresentam deficiências \cite{YANNAKAKIS2005}.
